@@ -7,7 +7,7 @@ public:
         for(int i = 0;i<n;i++){
             sum+=nums[i];
         }
-        if(sum < target) return 0;
+        // if(sum < target) return 0;
                 if((sum + target)%2!=0) return 0;
                         if((sum + target)<0) return 0;
 
