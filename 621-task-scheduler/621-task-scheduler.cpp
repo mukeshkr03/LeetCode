@@ -13,6 +13,9 @@ public:
         for(int i = 1;i<26;i++){
             ans-= min(v[0]-1,v[i]);
         }
-        return tasks.size() + max(0,ans);
+        if(ans<0){
+            return tasks.size();
+        }
+        return tasks.size() + ans;
     }
 };
