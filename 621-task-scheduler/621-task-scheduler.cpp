@@ -1,6 +1,9 @@
 class Solution {
 public:
     int leastInterval(vector<char>& tasks, int n) {
+        if(n==0){
+            return tasks.size();
+        }
         vector<int>v(26);
         for(auto i:tasks){
             v[i-'A']++;
