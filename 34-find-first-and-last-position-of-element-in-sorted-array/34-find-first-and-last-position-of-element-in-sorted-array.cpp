@@ -14,7 +14,7 @@ public:
             else if(nums[mid]<target){
                 s = mid+1;
             }
-            else if(nums[mid]>target){
+            else{
                 e = mid-1;
             }
         }
