@@ -9,7 +9,7 @@ public:
             if(nums[mid] == target){
                 a = mid;
                 e = mid-1;
-                continue;
+                // continue;
             }
             else if(nums[mid]<target){
                 s = mid+1;
@@ -26,7 +26,7 @@ public:
             if(nums[mid1] == target){
                 b = mid1;
                 s1 = mid1+1;
-                continue;
+                // continue;
             }
             else if(nums[mid1]<target){
                 s1 = mid1+1;
