@@ -10,9 +10,9 @@ public:
         grid[i][j]='v';  // mark as visited
         
         if(possible(grid,i+1, j,  n, m)) dfs(grid,i+1,j,m,n);
-        if(i>0 && grid[i-1][j]=='1') dfs(grid,i-1,j,m,n);
-        if(j<m-1 && grid[i][j+1]=='1') dfs(grid,i,j+1,m,n);
-        if(j>0 && grid[i][j-1]=='1') dfs(grid,i,j-1,m,n);
+        if(possible(grid,i-1, j,  n, m)) dfs(grid,i-1,j,m,n);
+        if(possible(grid,i, j+1,  n, m)) dfs(grid,i,j+1,m,n);
+        if(possible(grid,i, j-1,  n, m)) dfs(grid,i,j-1,m,n);
         else return;
     }
     
