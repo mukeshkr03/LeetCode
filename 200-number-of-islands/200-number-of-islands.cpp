@@ -13,7 +13,7 @@ public:
         if(possible(grid,i-1, j,  n, m)) dfs(grid,i-1,j,m,n);
         if(possible(grid,i, j+1,  n, m)) dfs(grid,i,j+1,m,n);
         if(possible(grid,i, j-1,  n, m)) dfs(grid,i,j-1,m,n);
-        else return;
+        return;
     }
     
     
