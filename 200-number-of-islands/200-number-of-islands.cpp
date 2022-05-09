@@ -1,15 +1,15 @@
 class Solution {
 public:
-    // bool possible(vector<vector<char>>& grid,int i,int j, int n,int m){
-    //     if(i<n-1 && i>0 && j<m-1 && j>0 && grid[i][j]=='1'){
-    //         return true;
-    //     }
-    //     return false;
-    // }
+    bool possible(vector<vector<char>>& grid,int i,int j, int n,int m){
+        if(i<0 || i>=n || j<0 || j>=m || grid[i][j]=='0' || grid[i][j]=='v'){
+            return false;
+        }
+        return true;
+    }
    void dfs(vector<vector<char>>& grid,int i,int j,int m,int n){
         grid[i][j]='v';  // mark as visited
         
-        if(i<n-1 && grid[i+1][j]=='1') dfs(grid,i+1,j,m,n);
+        if(possible(grid,i+1, j,  n, m)) dfs(grid,i+1,j,m,n);
         if(i>0 && grid[i-1][j]=='1') dfs(grid,i-1,j,m,n);
         if(j<m-1 && grid[i][j+1]=='1') dfs(grid,i,j+1,m,n);
         if(j>0 && grid[i][j-1]=='1') dfs(grid,i,j-1,m,n);
