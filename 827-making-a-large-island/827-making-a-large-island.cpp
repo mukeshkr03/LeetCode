@@ -58,7 +58,7 @@ public:
                         sol+=mp[i];
                     }
                     ans = max(ans,sol+1);
-                    // s.clear();
+                    s.clear();
                 }
             }
         }
