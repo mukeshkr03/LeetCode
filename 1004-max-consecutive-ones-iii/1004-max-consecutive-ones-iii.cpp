@@ -9,11 +9,7 @@ public:
             kk--;
         }
 
-        if(kk>=0){
-            ans = max(ans,j-i+1);    
-        }
-        
-        else if(kk<0){
+        if(kk<0){
             while(kk<0){
                 if(nums[i]==0){
                     kk++;
@@ -21,8 +17,13 @@ public:
                 i++;
             }
         }
+
+        else if(kk>=0){
+            ans = max(ans,j-i+1);
+        }
         j++;
        }
        return ans;
+
     }
 };
