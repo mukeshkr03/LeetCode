@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int longestOnes(vector<int>& nums, int k) {
+   int longestOnes(vector<int>& nums, int k) {
        int i = 0,j = 0,ans = 0;
        int kk = k;
        while(j<nums.size()){
@@ -8,13 +8,13 @@ public:
             kk--;
         }
 
-        if(kk>=0){
-            ans = max(ans,j-i+1);
-            j++;
+//         if(kk>=0){
+//             ans = max(ans,j-i+1);
+//             j++;
                 
-        }
+//         }
         
-        else if(kk<0){
+        if(kk<0){
             while(kk<0){
                 if(nums[i]==0){
                     kk++;
@@ -22,8 +22,13 @@ public:
                 i++;
             }
                 j++;
-            }
-       }
+        }
+           else if(kk>=0){
+            ans = max(ans,j-i+1);
+            j++;
+                
+        }
+      }
        return ans;
     }
 };
