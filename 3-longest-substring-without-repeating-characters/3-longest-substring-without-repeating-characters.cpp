@@ -8,25 +8,17 @@ public:
         while(j<s.size()){
             if(m[s[j]]==0){
                 m[s[j]]++;
-                // ans++;
                 ans = max(ans,j-i+1);
-                            j++;
+                j++;
 
             }
             else{
-                while(m[s[j]]!=0){
-                 
-                m[s[i]]--;
-                i++;   
+                while(m[s[j]]!=0){ 
+                    m[s[i]]--;
+                    i++;   
                 }
-                // ans = max(ans,j-i+1);
             }
-            // j++;
-            // ans++;"pwwkew"
         }
-        // for(auto i:m){
-        //     cout<<i.second<<endl;
-        // }
         return ans;
     }
 };
