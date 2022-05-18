@@ -14,9 +14,12 @@ public:
 
             }
             else{
+                while(m[s[j]]!=0){
+                 
                 m[s[i]]--;
-                i++;
-                ans = max(ans,j-i+1);
+                i++;   
+                }
+                // ans = max(ans,j-i+1);
             }
             // j++;
             // ans++;"pwwkew"
