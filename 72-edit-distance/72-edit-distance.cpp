@@ -4,8 +4,13 @@ public:
         int n = word1.length(),m = word2.length();
         int dp[n+1][m+1];
         
-        for(int j=0;j<=n;j++) dp[j][0] = j;
-        for(int i=0;i<=m;i++) dp[0][i] = i;
+        for(int i = 0;i<=n;i++){
+            for(int j = 0;j<=m;j++){
+                if(i == 0 || j == 0){
+                    dp[i][j] = max(i,j);
+                }
+            }
+        }
         
         for(int i = 1;i<=n;i++){
             for(int j = 1;j<=m;j++){
