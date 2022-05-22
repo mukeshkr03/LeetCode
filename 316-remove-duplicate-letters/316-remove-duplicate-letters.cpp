@@ -2,13 +2,17 @@ class Solution {
 public:
     string removeDuplicateLetters(string s) {
              vector<int> freq(26,0);//Track last index of occurence for each element
-        for(int i=0;i<s.size();++i)
-            freq[s[i]-'a']++;
+        map<char,int>seen;
+        for(int i=0;i<s.size();++i){
+         freq[s[i]-'a']++;
+            seen[s[i]]=0;
+        }
         
         stack<char> st;//Monotonic stack to maintain increasing order of chars
         // vector<bool> seen(26,false);//Track already included elements
-        map<char,int>seen;
+        // map<char,int>seen;
         for(int i=0;i<s.size();++i){
+            // seen[s[i]]==0;
             if(seen[s[i]]){//Don't process already included char
                 freq[s[i]-'a']--;
                 continue;
