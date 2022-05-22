@@ -1,29 +1,25 @@
 class Solution {
 public:
     string removeDuplicateLetters(string s) {
-        int n = s.size();
-        stack<char>st;
-        vector<int>f(26,0);
-                vector<bool>m(26,false);
-        // map<char,int>m;
-        for(int i = 0;i<n;i++){
-            f[s[i]-'a']++;
-            // m[s[i]] = 0;
-        }
-        for(int i = 0;i<n;i++){
-            char x = st.top();
-            if(m[s[i]-'a']==true){
-                f[s[i]-'a']--;
+             vector<int> freq(26,0);//Track last index of occurence for each element
+        for(int i=0;i<s.size();++i)
+            freq[s[i]-'a']++;
+        
+        stack<char> st;//Monotonic stack to maintain increasing order of chars
+        // vector<bool> seen(26,false);//Track already included elements
+        map<char,int>seen;
+        for(int i=0;i<s.size();++i){
+            if(seen[s[i]]){//Don't process already included char
+                freq[s[i]-'a']--;
                 continue;
             }
-           
-                while(!st.empty() && f[st.top()-'a']>0 && s[i]<st.top()){
-                    m[st.top()-'a'] = false;
-                    st.pop();
-                }
+            while(!st.empty() and st.top()>s[i] and freq[st.top()-'a']>0){//Pop all possible larger chars
+                seen[st.top()]=false;
+                st.pop();
+            }
             st.push(s[i]);
-            f[s[i]-'a']--;
-            m[s[i]-'a']=true;
+            seen[s[i]]=true;
+            freq[s[i]-'a']--;
         }
         string ans="";
         while(!st.empty()){//Build answer string
