@@ -30,13 +30,10 @@ public:
             }
             if(get != -1){
                 inc += dp[get];
-                // dp[i] = inc;
             }
-            dp[i] = inc;
-            // int exc = dp[i-1];
-            // else{
-                dp[i] = max(dp[i],dp[i-1]);
-            // }
+            dp[i] = inc;// if taken
+            
+                dp[i] = max(dp[i],dp[i-1]); // if taken or if not taken
         }
         return dp[n-1];
     }
