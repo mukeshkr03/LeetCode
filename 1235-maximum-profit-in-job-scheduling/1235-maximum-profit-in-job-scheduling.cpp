@@ -32,9 +32,10 @@ public:
                 inc += dp[get];
                 // dp[i] = inc;
             }
-            int exc = dp[i-1];
+            dp[i] = inc;
+            // int exc = dp[i-1];
             // else{
-                dp[i] = max(inc,exc);
+                dp[i] = max(dp[i],dp[i-1]);
             // }
         }
         return dp[n-1];
