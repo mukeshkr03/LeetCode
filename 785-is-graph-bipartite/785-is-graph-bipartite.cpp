@@ -3,7 +3,7 @@ public:
     bool solve(vector<vector<int>>& graph,int par,int src, int col, vector<int>&vis){
         for(auto i:graph[src]){
             if(vis[i] == -1){
-                vis[i] = 3 - vis[src];
+                vis[i] = 3 - col;
                 if(!solve(graph, src, i, 3-col, vis)){
                     return false;
                 };
