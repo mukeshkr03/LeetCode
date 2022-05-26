@@ -14,7 +14,7 @@ int m=s.size();
         dp[i][0]=check;
     }
     dp[0][0]=true;
-    
+    check=true;
     for(int i=1;i<=n;i++){
         for(int j=1;j<=m;j++){
             if(p[i-1]==s[j-1] or p[i-1]=='?') dp[i][j]=dp[i-1][j-1];
@@ -22,6 +22,12 @@ int m=s.size();
             else dp[i][j]=false;
         }
     }
+    //     for(int i=0;i<=n;i++){
+    //     for(int j=0;j<=m;j++){
+    //         cout<<dp[i][j]<<" ";
+    //     }
+    //         cout<<endl;
+    // }
     return dp[n][m];
 }
 };
