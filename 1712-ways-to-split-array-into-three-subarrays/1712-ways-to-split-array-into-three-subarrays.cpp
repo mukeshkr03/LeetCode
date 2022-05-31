@@ -14,8 +14,8 @@ public:
             
             int end = upper_bound(nums.begin()+i+1,nums.end()-1,(nums[n-1]+nums[i])/2)-nums.begin()-1;
             
-            ans = (ans+ max(0,end-start+1))%m;
-            // ans=ans%mod;
+            ans = (ans+ max(0,end-start+1));
+            ans=ans%m;
         }
         return ans;
     }
