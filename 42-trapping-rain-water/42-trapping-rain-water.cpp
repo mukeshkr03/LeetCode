@@ -14,17 +14,6 @@ public:
         }
         
         int ans = 0;
-        
-        for(int i = 0;i<n;i++){
-            cout<<a[i]<<" ";
-        }
-        cout<<endl;
-        
-        for(int i = 0;i<n;i++){
-            cout<<b[i]<<" ";
-        }
-        cout<<endl;
-        
         for(int i = 1;i<n-1;i++){
             ans+=min(a[i],b[i]) - height[i];
         }
