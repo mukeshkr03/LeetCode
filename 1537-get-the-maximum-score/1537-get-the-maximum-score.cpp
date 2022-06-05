@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int mod = 1000000007;
+    int mod = 1e9+7;
     int maxSum(vector<int>& nums1, vector<int>& nums2) {
         int i = 0, j = 0;
         long long a = 0, b = 0;
