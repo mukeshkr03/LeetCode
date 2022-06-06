@@ -12,13 +12,12 @@ public:
                 dfs(l-1,r,s);
                 s.pop_back();
             }
-             if(r>l && r>0){
+             if(r>l){
                 s.push_back(')');
                 dfs(l,r-1,s);
             }
         }
     vector<string> generateParenthesis(int n) {
-        // string s;
         dfs(n,n,"");
         return ans;
     }
