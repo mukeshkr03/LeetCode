@@ -10,7 +10,6 @@ public:
             }
             if(temp == 0){
                 temp = 1;
-                continue;
             }
         }
         
@@ -22,7 +21,6 @@ public:
             }
             if(temp == 0){
                 temp = 1;
-                continue;
             }
         }
         return ans;
