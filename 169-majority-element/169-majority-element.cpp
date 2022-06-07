@@ -14,6 +14,7 @@ public:
                 cnt = 1;
             }
         }
+        
         return nums[index];
     }
 };
