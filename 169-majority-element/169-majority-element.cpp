@@ -10,7 +10,7 @@ public:
         for(auto i:m){
             if(i.second > n/2){
                 ans = i.first;
-                break;
+                return ans;
             }
             // cout<<i.second<<" ";
         }
