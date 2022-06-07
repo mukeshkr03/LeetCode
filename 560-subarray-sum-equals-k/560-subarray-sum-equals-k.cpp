@@ -12,10 +12,10 @@ public:
             }
             mp[sum]++;
         }
-        mp.clear();
-        // for(auto i:mp){
-        //     cout<<i.first<<" "<<i.second<<endl;
-        // }
+        // mp.clear();
+        for(auto i:mp){
+            cout<<i.first<<" "<<i.second<<endl;
+        }
         return ans;
     }
 };
