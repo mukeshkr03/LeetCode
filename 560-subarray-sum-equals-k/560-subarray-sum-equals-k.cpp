@@ -9,7 +9,7 @@ public:
             int x = (sum-k);
             
             // if(sum == k) ans++;
-           if(m.find(x) != m.end()){
+           if(m.count(x)){
                 ans += m[x];
             }
             m[sum]++;
