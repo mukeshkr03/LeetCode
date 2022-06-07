@@ -6,15 +6,19 @@ public:
             if(nums[i] == nums[index]){
                 cnt++;
             }
-            else{
-                cnt--;
-            }
-            if(cnt == 0){
+            else if(cnt == 0){
                 index = i;
                 cnt = 1;
             }
+            else{
+                cnt--;
+            }
+            // if(cnt == 0){
+            //     index = i;
+            //     cnt = 1;
+            // }
         }
-        
+        // cout<<nums[index]<<endl;
         return nums[index];
     }
 };
