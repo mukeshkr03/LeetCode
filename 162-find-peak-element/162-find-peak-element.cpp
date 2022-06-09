@@ -6,11 +6,11 @@ public:
         // if(nums[0] <= nums[e]){
         //     return e;
         // }
-        while(s<e){
+        while(s<=e){
             int mid = s+(e-s)/2;
-            // if(s == e){
-            //     return s; 
-            // }
+            if(s == e){
+                return s; 
+            }
             // if(nums[mid]>=nums[mid - 1] && nums[mid] >= nums[mid + 1]){
             //     return mid;
             // }
