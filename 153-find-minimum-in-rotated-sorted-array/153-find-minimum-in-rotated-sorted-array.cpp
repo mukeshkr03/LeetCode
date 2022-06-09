@@ -8,9 +8,9 @@ public:
             }
         while(s<=e){
             int mid = s+(e-s)/2;
-            if(s == e){
-                return nums[s];
-            }
+            // if(s == e){
+            //     return nums[s];
+            // }
             if(nums[mid] > nums[mid + 1]){
                 return nums[mid+1];
             }
