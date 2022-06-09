@@ -21,7 +21,7 @@ public:
                 s = mid + 1;
             }
             else{
-                e = mid - 1;
+                e = mid;
             }
         }
         return ans;
