@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int MAX = 20000;
+    int MAX = 10000;
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         
         int n = mat.size(), m = mat[0].size();
