@@ -6,13 +6,14 @@ public:
         }
         return true;
     }
-   void dfs(vector<vector<char>>& grid,int i,int j,int m,int n){
+   void dfs(vector<vector<char>>& grid,int i,int j){
         grid[i][j]='v';  // mark as visited
+        int n = grid.size(); int m = grid[0].size();
         
-        if(possible(grid,i+1, j,  n, m)) dfs(grid,i+1,j,m,n);
-        if(possible(grid,i-1, j,  n, m)) dfs(grid,i-1,j,m,n);
-        if(possible(grid,i, j+1,  n, m)) dfs(grid,i,j+1,m,n);
-        if(possible(grid,i, j-1,  n, m)) dfs(grid,i,j-1,m,n);
+        if(possible(grid,i+1, j,  n, m)) dfs(grid,i+1,j);
+        if(possible(grid,i-1, j,  n, m)) dfs(grid,i-1,j);
+        if(possible(grid,i, j+1,  n, m)) dfs(grid,i,j+1);
+        if(possible(grid,i, j-1,  n, m)) dfs(grid,i,j-1);
         return;
     }
     
@@ -25,7 +26,7 @@ public:
             for(int j=0;j<m;j++){
                 if(grid[i][j]=='1'){
                     cnt++;
-                    dfs(grid,i,j,m,n);
+                    dfs(grid,i,j);
                 }
             }
         }
