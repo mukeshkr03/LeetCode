@@ -5,11 +5,6 @@ public:
     }
     int findKthLargest(vector<int>& nums, int k) {
         sort(nums.begin(),nums.end(),cmp);
-        for(auto i:nums){
-            cout<<i<<" ";
-        }
-        int ans = 0;
-        ans = nums[k-1];
-        return ans;
+        return nums[k-1];
     }
 };
