@@ -11,7 +11,7 @@ bool compFunc(const pair<int, string>& p1, const pair<int, string>& p2)
 class Solution {
 public:
     vector<string> topKFrequent(vector<string>& words, int k) {
-        unordered_map<string, int> ht;
+        map<string, int> ht;
         for (auto w : words)
         {
             ht[w]++;
