@@ -22,7 +22,7 @@ public:
         {
             vec.push_back({c,w});
         }
-        sort(vec.begin(), vec.end(), &compFunc);
+        sort(vec.begin(), vec.end(), compFunc);
         
         vector<string> ret(k);
         for (int i = 0; i< k; i++)
