@@ -14,8 +14,10 @@ public:
     
     void pop() {
         if(a.top() == b.top()){
+            b.top();
             b.pop();
         }
+        a.top();
         a.pop();
     }
     
