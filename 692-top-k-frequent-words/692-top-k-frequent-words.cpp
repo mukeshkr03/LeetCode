@@ -1,4 +1,4 @@
-bool compFunc(const pair<int, string>& p1, const pair<int, string>& p2)
+bool compFunc(pair<int, string>p1, pair<int, string>p2)
 {
     if (p1.first > p2.first)
         return true;
