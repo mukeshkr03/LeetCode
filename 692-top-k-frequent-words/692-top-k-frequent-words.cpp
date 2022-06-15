@@ -12,13 +12,13 @@ class Solution {
 public:
     vector<string> topKFrequent(vector<string>& words, int k) {
         unordered_map<string, int> ht;
-        for (auto& w : words)
+        for (auto w : words)
         {
             ht[w]++;
         }
         
         vector<pair<int, string>> vec;
-        for (auto& [w, c] : ht)
+        for (auto [w, c] : ht)
         {
             vec.push_back({c,w});
         }
