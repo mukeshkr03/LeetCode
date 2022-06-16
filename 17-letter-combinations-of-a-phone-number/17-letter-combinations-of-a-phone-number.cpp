@@ -3,12 +3,10 @@ public:
     vector<string> letterCombinations(string d) {
         string a[10] = {"","","abc","def","ghi", "jkl","mno","pqrs","tuv","wxyz"};
         
-        vector<string>ans;
-            // ans.push_back("");
-        if(d.size()==0) return ans;
+        if(d.size()==0) return {};
         
-            // vector<string>ans;
-            ans.push_back("");
+            vector<string>ans = {""};
+            // ans.push_back("");
         
             for(char c : d){
                 vector<string>temp;
