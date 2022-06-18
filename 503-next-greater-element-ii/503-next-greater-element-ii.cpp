@@ -6,7 +6,7 @@ public:
         stack<int>st;
         st.push(nums[n-1]);
         for(int i = n-2;i>=0;i--){
-            while(st.size()>0 && st.top()<nums[i]){
+            while(st.size()>0 && st.top()<=nums[i]){
                 st.pop();
             }
             st.push(nums[i]);
