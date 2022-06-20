@@ -6,18 +6,11 @@ public:
         }
         
         sort(nums1.begin(), nums1.end());
-        
-        // for(auto i: nums1){
-        //     cout<<i<<" ";
-        // }
-        // return 1.300000;
         double ans = nums1[(nums1.size())/2]; 
         if(nums1.size() % 2 == 0){
             double x = nums1[(nums1.size())/2], y = nums1[(nums1.size())/2 - 1]; 
             ans = (x+y)/2;
             double z = (x+y)/2;
-            cout<<z<<endl;
-            cout<<x<<" "<<y<<endl;
         }
         return (ans);
     }
