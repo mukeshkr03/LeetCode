@@ -27,10 +27,10 @@ public:
         for(int i = 0;i<n;i++){
             ans = max(ans,a[i]);
         }
-        // for(auto i:a){
-        //     cout<<i<<" ";
-        // }
-        // cout<<endl;
+        for(auto i:a){
+            cout<<i<<" ";
+        }
+        cout<<endl;
         return ans;
     }
 };
