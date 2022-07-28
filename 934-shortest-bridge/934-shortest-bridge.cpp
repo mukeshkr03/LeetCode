@@ -1,19 +1,23 @@
 class Solution {
 public:
-    void dfs(vector<vector<int>>& grid, int i, int j, queue<pair<int,int>>&q){
-        int r = grid.size();
-        int c = grid[0].size();
-        if(i < 0 || j < 0 || i >= r || j >= c || grid[i][j] == 0 || grid[i][j] == 2)
-        {
-            return;
-        }
+    int dfs(vector<vector<int>>& grid, int i, int j, queue<pair<int,int>>&q){
+        int n = grid.size(), m = grid[0].size();
         q.push({i,j});
         grid[i][j] = 2;
-        dfs(grid,i, j+1,q);
-        dfs(grid, i, j-1,q);
-        dfs(grid, i+1,j,q);
-        dfs(grid,i-1,j,q);
-        return;
+        
+        if(i>0 && grid[i-1][j]  == 1){
+            dfs(grid, i-1,j,q);
+        }
+        if(i<n-1 && grid[i+1][j]  == 1){
+            dfs(grid, i+1,j,q);
+        }
+        if(j>0 && grid[i][j-1]  == 1){
+            dfs(grid, i,j-1,q);
+        }
+        if(j<m-1 && grid[i][j+1]  == 1){
+            dfs(grid, i,j+1,q);
+        }
+        return 0;
     }
     int shortestBridge(vector<vector<int>>& grid) {
         queue<pair<int,int>>q;
