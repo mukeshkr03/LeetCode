@@ -3,7 +3,7 @@ public:
     void dfs(vector<vector<int>>& grid, int i, int j, queue<pair<int,int>>&q){
         int r = grid.size();
         int c = grid[0].size();
-        if(i < 0 || j < 0 || i >= r || j >= r || grid[i][j] == 0 || grid[i][j] == 2)
+        if(i < 0 || j < 0 || i >= r || j >= c || grid[i][j] == 0 || grid[i][j] == 2)
         {
             return;
         }
