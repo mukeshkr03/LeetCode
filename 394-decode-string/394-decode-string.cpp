@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string ans(string &s, int &i){
+    string ans(string s, int &i){
         string res;
         while(i<s.length() && s[i]!=']'){
             if(isdigit(s[i])){
