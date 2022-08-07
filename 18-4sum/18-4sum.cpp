@@ -10,7 +10,7 @@ public:
                    long long x = (long long)target - (long long)nums[i]- (long long)nums[j] - (long long)nums[k]; 
                    
                     if(binary_search(nums.begin()+k+1,nums.end(),x))
-                          s.insert(vector<int>{nums[i],nums[j],nums[k],(int)x}); 
+                          s.insert({nums[i],nums[j],nums[k],(int)x}); 
                         
                     }
                 }
