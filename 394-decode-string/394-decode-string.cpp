@@ -2,15 +2,15 @@ class Solution {
 public:
     string ans(string s, int &i){
         string res;
-        while(i<s.length() && s[i]!=']'){
+        while(i<s.size() && s[i]!=']'){
             if(isdigit(s[i])){
                 int k = 0;
-                while(isdigit(s[i]) && i<s.length()){
+                while(isdigit(s[i]) && i<s.size()){
                     k = k*10 + s[i] - '0';
                     i++;
                 }
                 i++;
-                string r = ans(s,i);
+                string r = ans(s, i);
                 while(k>0){
                     res+=r;
                     k--;
@@ -18,7 +18,8 @@ public:
                 i++;
             }
             else{
-                res+=s[i];i++;
+                res+=s[i];
+                i++;
             }
         }
         return res;
