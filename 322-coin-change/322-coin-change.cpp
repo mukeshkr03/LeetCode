@@ -28,7 +28,12 @@ public:
                 }
             }
         }
-        
+        // for(int i = 0;i<=n;i++){
+        //     for(int j = 0;j<=amount;j++){
+        //        cout<<a[i][j]<<" ";
+        //     }
+        //     cout<<endl;
+        // }
         return a[n][amount] == (INT_MAX-1)? -1 : a[n][amount];
 
     }
