@@ -123,18 +123,8 @@ class Solution{
         pair<bool,int>left = balancedFast(root -> left);
         pair<bool,int>right = balancedFast(root -> right);
         
-        bool differ = abs(left.second - right.second) <= 1;
-        bool leftans = left.first;
-        bool rightans = right.first;
-        
         pair<bool,int>ans;
-        // ans.first = left.first && right.first && ();
-        if(leftans && rightans && differ){
-            ans.first = true;
-        }
-        else{
-            ans.first = false;
-        }
+        ans.first = left.first && right.first && (abs(left.second - right.second) <= 1);
         ans.second = max(left.second, right.second) + 1;
         
         return ans;
