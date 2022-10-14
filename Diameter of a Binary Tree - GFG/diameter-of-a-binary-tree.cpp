@@ -107,24 +107,24 @@ class Solution {
         return max(left, right) + 1;
     }
     
-    int diameter(Node* root) {
-        
+    pair<int,int> fastDiameter(Node* root){
         if(root == NULL){
-            return 0;
+            pair<int,int>p = {0,0};
+            return p;
         }
         
-        int one = diameter(root -> left);
-        int two = diameter(root -> right);
-        int three = height(root -> left) + height(root -> right) + 1;
+        pair<int,int>one = fastDiameter(root -> left);
+        pair<int,int>two = fastDiameter(root -> right);
+        int three = one.second + two.second + 1;
         
-        return max(one, max(two, three));
-        
-        
-        
-        
-        
-        
-        
+        pair<int,int>ans;
+        ans.first = max(one.first, max(two.first, three)); 
+        ans.second = max(one.second, two.second) + 1;
+        return ans;
+    }
+    
+    int diameter(Node* root) {
+        return fastDiameter(root).first;
     }
 };
 
