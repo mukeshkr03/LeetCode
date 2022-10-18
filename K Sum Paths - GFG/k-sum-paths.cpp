@@ -105,9 +105,6 @@ class Solution{
       }
       path.push_back(root -> data);
       
-      solve(root -> left, count, path, k);
-      solve(root -> right, count, path, k);
-      
       int sum = 0;
       for(int i = path.size() - 1; i>=0; i--){
           sum+=path[i];
@@ -116,6 +113,10 @@ class Solution{
             //   break;
           }
       }
+      
+      
+      solve(root -> left, count, path, k);
+      solve(root -> right, count, path, k);
       
       path.pop_back();
       return;
