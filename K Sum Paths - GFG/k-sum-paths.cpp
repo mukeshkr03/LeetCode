@@ -99,7 +99,7 @@ struct Node
 */
 class Solution{
   public:
-  void solve(Node* root, int &count, vector<int>&path, int k){
+  void solve(Node* root, int &count, vector<int>path, int k){
       if(root == NULL){
           return;
       }
