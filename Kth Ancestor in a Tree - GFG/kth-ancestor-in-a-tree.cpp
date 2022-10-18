@@ -149,7 +149,7 @@ Node* solve(Node* root, int &k, int node){
 int kthAncestor(Node *root, int k, int node)
 {
     Node* ans = solve(root, k, node);
-    if(ans == NULL || ans -> data == node){
+    if( ans -> data == node){
         return -1;
     }
     return ans -> data;
