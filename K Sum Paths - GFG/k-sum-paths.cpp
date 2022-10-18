@@ -99,36 +99,34 @@ struct Node
 */
 class Solution{
   public:
-   void solve(Node* root, int k, int &count, vector<int> &path) {
-        //base case
-        if(root == NULL)
-            return ;
-        
-        path.push_back(root->data);
-        
-        //left
-        solve(root->left, k, count, path);
-        //right
-        solve(root->right, k, count, path);
-        
-        //check for K Sum
-        
-        int size = path.size();
-        int sum = 0;
-        for(int i = size-1; i>=0; i--)  {
-            sum += path[i];
-            if(sum == k)
-                count++;
-        }
-        
-        path.pop_back();
-    }
+  void solve(Node* root, int &count, vector<int>&path, int k){
+      if(root == NULL){
+          return;
+      }
+      path.push_back(root -> data);
+      
+      solve(root -> left, count, path, k);
+      solve(root -> right, count, path, k);
+      
+      int sum = 0;
+      for(int i = path.size() - 1; i>=0; i--){
+          sum+=path[i];
+          if(sum == k){
+              count++;
+            //   break;
+          }
+      }
+      
+      path.pop_back();
+      return;
+  }
     int sumK(Node *root,int k)
     {
-         vector<int> path;
+        vector<int>path;
         int count = 0;
-        solve(root, k, count, path);
+        solve(root, count, path, k);
         return count;
+        
     }
 };
 
