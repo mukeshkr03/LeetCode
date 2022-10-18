@@ -99,11 +99,16 @@ struct Node
 */
 class Solution{
   public:
-  void solve(Node* root, int &count, vector<int>path, int k){
+  void solve(Node* root, int &count, vector<int>&path, int k){
       if(root == NULL){
           return;
       }
+      
+      
       path.push_back(root -> data);
+      
+      solve(root -> left, count, path, k);
+      solve(root -> right, count, path, k);
       
       int sum = 0;
       for(int i = path.size() - 1; i>=0; i--){
@@ -113,10 +118,6 @@ class Solution{
             //   break;
           }
       }
-      
-      
-      solve(root -> left, count, path, k);
-      solve(root -> right, count, path, k);
       
       path.pop_back();
       return;
