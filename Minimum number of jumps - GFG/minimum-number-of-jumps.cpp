@@ -9,10 +9,11 @@ using namespace std;
 class Solution{
   public:
     int minJumps(int arr[], int n){
+        if(arr[0] == 0 && n>1){
+            return -1;
+        }
         int jumps = 0, curr_max = 0, curr_reach = 0;
-        // if(arr[0] == 0){
-        //     return -1;
-        // }
+        
         for(int i = 0;i<n-1;i++){
             if(i + arr[i] > curr_max){
                 curr_max = i + arr[i];
