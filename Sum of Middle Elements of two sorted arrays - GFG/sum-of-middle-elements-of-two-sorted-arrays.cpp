@@ -12,20 +12,18 @@ class Solution {
 public:
     int findMidSum(int ar1[], int ar2[], int n) {
             // code here 
-            vector<int>v(ar1, ar1 + n);
-            for(int i = 0;i<n;i++){
-                v.push_back(ar2[i]);
+            int j = 0;
+            for(int i = n-1; i>=0; i--){
+                if(ar1[i]>ar2[j]){
+                    swap(ar1[i],ar2[j]);
+                    j++;
+                }
             }
-            sort(v.begin(), v.end());
-             n = n + n;
-            //  for(int i = 0;i<n;i++){
-            //      cout<<v[i]<<" ";
-            //  }
-            //  cout<<endl;
-            //  int ans = v[n/2 - 1], ans2 = v[n/2];
-            //  cout<<ans<<endl;
-            //  cout<<ans2<<endl;
-            return ((v[n/2 - 1] + v[n/2]));
+            // 1 3 5 4 2
+            // 9 7 6 8 10
+            sort(ar1,ar1+n);
+            sort(ar2,ar2+n);
+            return (ar1[n-1] + ar2[0]);
     }
 };
 
